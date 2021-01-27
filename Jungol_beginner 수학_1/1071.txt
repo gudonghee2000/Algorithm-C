@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+int main() {
+    int n;
+    int m;
+    vector<int> koo;
+     
+    cin >> n;
+     
+    for(int i=0; i<n; i++){
+        int a;
+        cin >>a;
+        koo.push_back(a);
+    }
+    cin >> m;
+    int first=0;
+    int second =0;
+     
+    for(int i=0; i<n; i++){
+        if(m== koo[i]){
+            first+= koo[i];
+            second += koo[i];
+        }
+        else if(m%koo[i] == 0){
+            first += koo[i];
+        }
+        else if(koo[i] %m == 0){
+            second += koo[i];
+        }
+    }
+    cout << first << "\n";
+    cout << second;
+    return 0;
+}

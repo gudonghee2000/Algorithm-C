@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+ 
+int main() {
+    int a;
+    int b;
+    int c;
+    cin >> a;
+    cin >> b;
+    cin >>c;
+     
+    int ret= a*b*c;
+    char checker[100];
+    int koo[100];
+     
+    sprintf(checker, "%d", ret);
+    for(int i=0; i<strlen(checker); i++){
+        koo[i]= checker[i] - '0';
+    }
+     
+    int cnt[10] = {0,};
+    for(int i=0; i<strlen(checker); i++){
+            cnt[koo[i]]++;
+    }
+    for(int i=0; i<10; i++){
+        printf("%d\n", cnt[i]);
+         
+    }
+    return 0;
+}
