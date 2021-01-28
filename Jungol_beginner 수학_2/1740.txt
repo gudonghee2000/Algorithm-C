@@ -1,0 +1,47 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+bool checker(int i) {
+    int cnt = 2;
+    while (cnt<i) {
+        if (i % cnt ==0) {
+            return false;
+        }
+        cnt++;
+    }
+    return true;
+}
+ 
+int main() {
+    int m, n;
+    cin >> m;
+    cin >> n;
+    int sum = 0;
+    int first;
+    int none = -1;
+    for (int i = m; i<=n; i++){
+        if (i == 1)continue;
+        if (checker(i)) {
+            sum += i;
+            none += i;
+        };
+    }
+    for (int i = m; i <= n; i++) {
+        if (i == 1) {
+            continue;
+        }
+        if (checker(i)) {
+            first = i;
+            break;
+        };
+    }
+    if (none != -1) {
+        printf("%d\n", sum);
+        printf("%d\n", first);
+    }
+    else {
+        printf("%d\n", none);
+    }
+    return 0;
+}
