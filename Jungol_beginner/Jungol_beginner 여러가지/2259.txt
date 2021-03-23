@@ -1,0 +1,51 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+ 
+int main() {
+    int k;
+    int coo[10];
+    int length[10];
+    cin >> k;
+     
+    for(int i=0; i<6; i++){
+        scanf("%d %d", &coo[i], &length[i]);
+    }
+     
+    int max1_2=-9999;
+    int min1_2 = 9999;
+     
+    int max3_4=-9999;
+    int min3_4=9999;
+     
+    for(int i=0; i<6; i++){
+        if(coo[i] == 2||coo[i]==1){
+            if(max1_2<length[i]){
+                max1_2 = length[i];
+            }
+        }
+        else if(coo[i]==3||coo[i]==4){
+                if(max3_4<length[i]){
+                    max3_4 =length[i];
+                }
+            }
+    }
+     
+     
+    for(int i=0; i<6; i++){
+        if(coo[i-1]== coo[i+1]){
+            min1_2 = length[i]*length[i+1];
+            break;
+        }
+    }
+     
+    
+    int full = max1_2*max3_4;
+    int pool = min1_2;
+    int ret = full-pool;
+    ret = ret*k;
+    printf("%d",ret);
+     
+    return 0;
+}
