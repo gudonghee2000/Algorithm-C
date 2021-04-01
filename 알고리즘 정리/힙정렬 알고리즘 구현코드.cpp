@@ -19,7 +19,7 @@ void heap(int* data, int num) {
 
 int main() {
     int num = 9;
-    int data[9] = { 1,5,9,7,4,5,8,6,7 };
+    int data[9] = { 7,6,5,8,3,5,9,1,6 };
 
     heap(data, num);
 
